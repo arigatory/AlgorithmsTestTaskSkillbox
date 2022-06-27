@@ -26,7 +26,7 @@ public class Solution
 
     public ListNode MergeTwoLists(ListNode l1, ListNode l2)
     {
-        // поддерживать неизменную ссылку на узел перед возвращаемым узлом.
+        // поддерживаем неизменную ссылку на узел перед возвращаемым узлом.
         ListNode prehead = new ListNode(-1);
 
         ListNode prev = prehead;
