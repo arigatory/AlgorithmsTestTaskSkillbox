@@ -1,8 +1,8 @@
-﻿ class TreeNode:
-     def __init__(self, val=0, left=None, right=None):
-         self.val = val
-         self.left = left
-         self.right = right
+﻿class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
 
     # Сложность.
     # Пусть N будет количеством узлов в дереве. 
@@ -19,21 +19,20 @@
     # Если дерево сбалансировано, сложность будет O(logN).
 
 
-class Solution:
-    def diameterOfBinaryTree(self, root: TreeNode) -> int:
-        diameter = 0
+def diameter_of_binary_tree(root: TreeNode) -> int:
+    diameter = 0
 
-        def longest_path(node):
-            if not node:
-                return 0
-            nonlocal diameter
+    def longest_path(node):
+        if not node:
+            return 0
+        nonlocal diameter
 
-            left_path = longest_path(node.left)
-            right_path = longest_path(node.right)
+        left_path = longest_path(node.left)
+        right_path = longest_path(node.right)
 
-            diameter = max(diameter, left_path + right_path)
+        diameter = max(diameter, left_path + right_path)
 
-            return max(left_path, right_path) + 1
+        return max(left_path, right_path) + 1
 
-        longest_path(root)
-        return diameter
+    longest_path(root)
+    return diameter
